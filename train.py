@@ -107,7 +107,8 @@ if __name__ == "__main__":
         synthetic_test_loader=synthetic_test_loader,
     )
     # Plot the training and test loss and accuracy
-    plot_loss_acc(results)
+    fig = plot_loss_acc(results)
+    fig.savefig("results.png")
 
     # Delete the model and optimizer
     del model, optimizer
@@ -132,7 +133,9 @@ if __name__ == "__main__":
         synthetic_test_loader=synthetic_test_loader,
     )
     # Plot the training and test loss and accuracy
-    plot_loss_acc(advstyle_results)
+    fig = plot_loss_acc(advstyle_results)
+    fig.savefig("advstyle_results.png")
 
     # Plot the accuracy of the synthetic test set
-    plot_key([results, advstyle_results], "synthetic_test_acc", "Synthetic Test Accuracy")
+    fig = plot_key([results, advstyle_results], "synthetic_test_acc", "Synthetic Test Accuracy")
+    fig.savefig("synthetic_test_acc.png")

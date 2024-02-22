@@ -6,7 +6,7 @@ import matplotlib.pyplot as plt
 import seaborn as sns
 
 
-def plot_loss_acc(results: Dict[str, List]):
+def plot_loss_acc(results: Dict[str, List]) -> plt.Figure:
     """
     Plot the training and test loss and accuracy
 
@@ -14,12 +14,17 @@ def plot_loss_acc(results: Dict[str, List]):
     ----------
     results : Dict[str, List]
         Dictionary containing the training and test results
+
+    Returns
+    -------
+    plt.Figure
+        Figure containing the plots
     """
     # Set default style
     sns.set_theme()
 
     # Create a new figure
-    plt.figure(figsize=(12, 6))
+    fig = plt.figure(figsize=(12, 6))
 
     # Plot the training and test loss
     plt.subplot(1, 2, 1)
@@ -39,11 +44,11 @@ def plot_loss_acc(results: Dict[str, List]):
     plt.title("Training and Test Accuracy")
     plt.legend()
 
-    # Show the plot
-    plt.show()
+    # Return the figure
+    return fig
 
 
-def plot_key(results: List[Dict[str, Union[float, int]]], key: str, title: str):
+def plot_key(results: List[Dict[str, Union[float, int]]], key: str, title: str) -> plt.Figure:
     """
     Plot a key from the results
 
@@ -55,6 +60,11 @@ def plot_key(results: List[Dict[str, Union[float, int]]], key: str, title: str):
         Key to plot
     title : str
         Title of the plot
+
+    Returns
+    -------
+    plt.Figure
+        Figure containing the plot
 
     Raises
     ------
@@ -73,7 +83,7 @@ def plot_key(results: List[Dict[str, Union[float, int]]], key: str, title: str):
     sns.set_theme()
 
     # Create a new figure
-    plt.figure(figsize=(12, 6))
+    fig = plt.figure(figsize=(12, 6))
 
     # Plot the key
     for i, result in enumerate(results):
@@ -83,5 +93,5 @@ def plot_key(results: List[Dict[str, Union[float, int]]], key: str, title: str):
     plt.title(title)
     plt.legend()
 
-    # Show the plot
-    plt.show()
+    # Return the figure
+    return fig
