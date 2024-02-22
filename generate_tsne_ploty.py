@@ -106,3 +106,4 @@ if __name__ == "__main__":
     # Apply t-SNE for dimensionality reduction and create a scatter plot
     fig = t_sne([test_means, synthetic_test_means])
     fig.savefig("./assets/t_sne_plot.png")
+    print("t-SNE plot saved at ./assets/t_sne_plot.png")
