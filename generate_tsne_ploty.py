@@ -57,6 +57,7 @@ def t_sne(stylefeats: List[np.array]) -> plt.Figure:
     plt.xlim(-80, 80)
     plt.ylim(-80, 80)
     plt.grid(True)
+    plt.tight_layout()
 
     return fig
 
