@@ -1,7 +1,3 @@
-# Ignore data and results directory
-data/
-results/
-
 # IDE - specific files
 .vscode/
 .idea/
