@@ -82,7 +82,7 @@ pip install -r requirements.txt
 1. From the above, one can see that the synthetic test set has different style features from the original test set. This is also evident from the t-SNE visualization of the feature representations of the original and synthetic test sets. 0 and 1 represent the original and synthetic test sets, respectively.
 
     <div align="center">
-        <img src="./assets/t_sne_plot.png" width="75%" alt="t-SNE" />
+        <img src="./assets/t_sne_plot.png" width="50%" alt="t-SNE" />
     </div>
 
 2. Train the models by running the following command:
