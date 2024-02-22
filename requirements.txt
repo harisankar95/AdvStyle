@@ -4,3 +4,5 @@ tqdm
 numpy
 matplotlib
 seaborn
+opencv-python
+scikit-learn
