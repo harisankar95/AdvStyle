@@ -6,9 +6,9 @@ from torch import nn
 from torch.utils.data import DataLoader
 from torchvision import datasets, transforms
 
-from advstyle import train_model
-from model import SimpleImageClassifier
-from utils import plot_key, plot_loss_acc
+from src.advstyle import train_model
+from src.model import SimpleImageClassifier
+from src.utils import plot_key, plot_loss_acc
 
 # Define the directories for the training and test sets
 TRAIN_DIR = "./training_set"
@@ -135,4 +135,4 @@ if __name__ == "__main__":
     plot_loss_acc(advstyle_results)
 
     # Plot the accuracy of the synthetic test set
-    plot_key(advstyle_results, "synthetic_test_acc", "Synthetic Test Accuracy")
+    plot_key([results, advstyle_results], "synthetic_test_acc", "Synthetic Test Accuracy")
