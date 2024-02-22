@@ -69,31 +69,28 @@ pip install -r requirements.txt
     Below one can see an example image from the original test set and its synthetic test set with different style features.
 
     <div align="center">
-        <figure style="display: inline-block;">
-            <img src="./assets/test_set.jpg" width="75%" alt="Test Set" />
-            <figcaption>Test Set</figcaption>
+        <figure style="display: inline-block; text-align: center;">
+            <img src="./assets/test_set.jpg" width="50%" alt="Test Set" />
+            <p>Test Set</p>
         </figure>
-        <figure style="display: inline-block;">
-            <img src="./assets/synthetic_test_set.jpg" width="75%" alt="Synthetic Test Set" />
-            <figcaption>Synthetic Test Set</figcaption>
+        <figure style="display: inline-block; text-align: center;">
+            <img src="./assets/synthetic_test_set.jpg" width="50%" alt="Synthetic Test Set" />
+            <p>Synthetic Test Set</p>
         </figure>
     </div>
 
 1. From the above, one can see that the synthetic test set has different style features from the original test set. This is also evident from the t-SNE visualization of the feature representations of the original and synthetic test sets. 0 and 1 represent the original and synthetic test sets, respectively.
 
     <div align="center">
-        <figure>
-            <img src="./assets/t_sne_plot.png" width="75%" alt="t-SNE" />
-            <figcaption>t-SNE</figcaption>
-        </figure>
+        <img src="./assets/t_sne_plot.png" width="75%" alt="t-SNE" />
     </div>
 
-1. Train the models by running the following command:
+2. Train the models by running the following command:
 
     ```bash
 
     python3 train.py
-    
+
     ```
 
     This will train the models with and without the style augmentation and save the plots to the `results` directory.
