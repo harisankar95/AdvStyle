@@ -7,7 +7,7 @@
 This project is an implementation of the paper "Adversarial Style Augmentation for Domain
 Generalized Urban-Scene Segmentation"[[1](https://arxiv.org/abs/2207.04892)] by Z. Zhong et al. The paper proposes a method to improve the performance of a model on unseen real domains by adversarially augmenting the style of the input images. The method is based on the observation that the style of the images can largely influence the model's performance and that the style features can be well represented by the channel-wise mean and standard deviation of the images. The proposed method, called Adversarial Style Augmentation (AdvStyle), regards the style feature as a learnable parameter and updates it by adversarial training. The paper demonstrates that AdvStyle can significantly improve the model performance on unseen real domains for semantic segmentation.
 
-Here, we apply the method to the task of image classification and evaluate its performance kaggel's "Dogs vs. Cats" dataset[[2](https://www.kaggle.com/datasets/tongpython/cat-and-dog/data)]. We create a synthetic test set by applying the style augmentation to the original test set and compare the performance of the model on the original and synthetic test sets.
+Here, we apply the method to the task of image classification and evaluate its performance kaggel's on "Dogs vs. Cats" dataset[[2](https://www.kaggle.com/datasets/tongpython/cat-and-dog/data)]. We create a synthetic test set by applying the style augmentation to the original test set and compare the performance of the model on the original and synthetic test sets.
 
 ## Getting Started
 
