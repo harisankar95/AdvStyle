@@ -9,6 +9,7 @@ from typing import List
 
 import cv2
 import numpy as np
+from tqdm.auto import tqdm
 
 # Artifically augment the mean and std to make the images look like synthetic images
 NEW_MEAN = [0.79, 0.59, 0.21]
@@ -38,7 +39,7 @@ def augment_images(folder: str, new_mean: List, new_std: List):
 
     # Loop through the images in the test set
     for root, dirs, files in os.walk(folder):
-        for file in files:
+        for file in tqdm(files, desc="Augmenting images", total=len(files)):
             if file.endswith(".jpg"):
                 img = cv2.imread(os.path.join(root, file), cv2.IMREAD_COLOR)
                 img = img / 255.0
