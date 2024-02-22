@@ -11,9 +11,9 @@ from src.model import SimpleImageClassifier
 from src.utils import plot_key, plot_loss_acc
 
 # Define the directories for the training and test sets
-TRAIN_DIR = "./training_set"
-TEST_DIR = "./test_set"
-SYNTHETIC_TEST_DIR = "./synthetic_test_set"
+TRAIN_DIR = "./data/training_set"
+TEST_DIR = "./data/test_set"
+SYNTHETIC_TEST_DIR = "./data/synthetic_test_set"
 
 # Define the image sizes
 IMAGE_WIDTH = 224
@@ -108,7 +108,7 @@ if __name__ == "__main__":
     )
     # Plot the training and test loss and accuracy
     fig = plot_loss_acc(results)
-    fig.savefig("results.png")
+    fig.savefig("./results/without_advstyle_results.png")
 
     # Delete the model and optimizer
     del model, optimizer
@@ -134,8 +134,8 @@ if __name__ == "__main__":
     )
     # Plot the training and test loss and accuracy
     fig = plot_loss_acc(advstyle_results)
-    fig.savefig("advstyle_results.png")
+    fig.savefig("./results/advstyle_results.png")
 
     # Plot the accuracy of the synthetic test set
     fig = plot_key([results, advstyle_results], "synthetic_test_acc", "Synthetic Test Accuracy")
-    fig.savefig("synthetic_test_acc.png")
+    fig.savefig("./results/synthetic_test_acc.png")

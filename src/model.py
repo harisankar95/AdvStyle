@@ -3,7 +3,7 @@ This file contains the model definition for the simple image classifier.
 """
 
 import torch
-import torch.nn as nn
+from torch import nn
 
 
 class SimpleImageClassifier(nn.Module):
