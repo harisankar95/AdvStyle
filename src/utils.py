@@ -55,7 +55,20 @@ def plot_key(results: List[Dict[str, Union[float, int]]], key: str, title: str):
         Key to plot
     title : str
         Title of the plot
+
+    Raises
+    ------
+    ValueError
+        If the results are not a list of dictionaries or if the key is not in the dictionaries
     """
+    # Check if results is a list of dictionaries
+    if not all(isinstance(result, dict) for result in results):
+        raise ValueError("Results must be a list of dictionaries")
+
+    # Check if the key is in the dictionaries
+    if not all(key in result for result in results):
+        raise ValueError("Key must be in the dictionaries")
+
     # Set default style
     sns.set_theme()
 

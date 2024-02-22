@@ -246,9 +246,6 @@ def train_model(
             model, test_loader, criterion, device, synthetic_test_loader
         )
 
-        # Update progress bar
-        pbar.update(1)
-
         # Update results
         results["train_loss"].append(train_loss)
         results["train_acc"].append(train_acc)
@@ -263,6 +260,9 @@ def train_model(
             f"Test Loss: {test_loss:.4f}, Test Acc: {test_acc:.4f}, "
             f"Synthetic Test Acc: {synthetic_test_acc:.4f}"
         )
+
+        # Update the progress bar
+        pbar.update(1)
 
     # Close the progress bar
     pbar.close()
