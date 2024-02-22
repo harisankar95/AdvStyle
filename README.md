@@ -1,5 +1,7 @@
 # Adversarial Style for Image Classification
 
+[![Pylint](https://github.com/harisankar95/AdvStyle/actions/workflows/pylint.yml/badge.svg)](https://github.com/harisankar95/AdvStyle/actions/workflows/pylint.yml)
+
 ## Introduction
 
 This project is an implementation of the paper "Adversarial Style Augmentation for Domain
