@@ -85,7 +85,7 @@ pip install -r requirements.txt
         <img src="./assets/t_sne_plot.png" width="50%" alt="t-SNE" />
     </div>
 
-2. Train the models by running the following command:
+1. Train the models by running the following command:
 
     ```bash
 
@@ -94,5 +94,22 @@ pip install -r requirements.txt
     ```
 
     This will train the models with and without the style augmentation and save the plots to the `results` directory.
+
+    The train step can be visualized with the following flowchart:
+
+    ```mermaid
+    graph TD
+        B[Input Images]
+        B --> C{Normalize Images}
+        C -->|Detach| D[Normalized Images]
+        D --> E[Create Adversarial Style Features]
+        E --> F[Optimize Adversarial Features]
+        F --> G[Generate Adversarial Inputs]
+        G --> H[Train Classifier Network with Original and Adversarial Inputs]
+        H --> I[Concatenate Inputs and Ground Truth]
+        I --> J[Compute Loss]
+        J --> K[Backpropagate]
+        K --> L[Update Network Weights]
+    ```
 
 ## Results
