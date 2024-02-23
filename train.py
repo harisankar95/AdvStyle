@@ -137,5 +137,10 @@ if __name__ == "__main__":
     fig.savefig("./results/advstyle_results.png")
 
     # Plot the accuracy of the synthetic test set
-    fig = plot_key([results, advstyle_results], "synthetic_test_acc", "Synthetic Test Accuracy")
+    fig = plot_key(
+        [results, advstyle_results],
+        "synthetic_test_acc",
+        "Synthetic Test Accuracy",
+        labels=["Without AdvStyle", "With AdvStyle"],
+    )
     fig.savefig("./results/synthetic_test_acc.png")

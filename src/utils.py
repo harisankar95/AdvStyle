@@ -43,12 +43,15 @@ def plot_loss_acc(results: Dict[str, List]) -> plt.Figure:
     plt.ylabel("Accuracy")
     plt.title("Training and Test Accuracy")
     plt.legend()
+    plt.tight_layout()
 
     # Return the figure
     return fig
 
 
-def plot_key(results: List[Dict[str, Union[float, int]]], key: str, title: str) -> plt.Figure:
+def plot_key(
+    results: List[Dict[str, Union[float, int]]], key: str, title: str, labels: Union[List[str], None] = None
+) -> plt.Figure:
     """
     Plot a key from the results
 
@@ -60,6 +63,8 @@ def plot_key(results: List[Dict[str, Union[float, int]]], key: str, title: str) 
         Key to plot
     title : str
         Title of the plot
+    labels : Union[List[str], None], optional
+        List of labels for the plot, by default None
 
     Returns
     -------
@@ -69,7 +74,9 @@ def plot_key(results: List[Dict[str, Union[float, int]]], key: str, title: str) 
     Raises
     ------
     ValueError
-        If the results are not a list of dictionaries or if the key is not in the dictionaries
+        - If the results are not a list of dictionaries
+        - If the key is not in the dictionaries
+        - If the labels have a different length than the results
     """
     # Check if results is a list of dictionaries
     if not all(isinstance(result, dict) for result in results):
@@ -85,13 +92,20 @@ def plot_key(results: List[Dict[str, Union[float, int]]], key: str, title: str) 
     # Create a new figure
     fig = plt.figure(figsize=(12, 6))
 
+    # Create labels if not provided
+    if labels is None:
+        labels = [f"run {i + 1}" for i in range(len(results))]
+    elif len(labels) != len(results):
+        raise ValueError("Labels must have the same length as results")
+
     # Plot the key
     for i, result in enumerate(results):
-        sns.lineplot(x=range(len(result[key])), y=result[key], label=f"run {i + 1}")
+        sns.lineplot(x=range(len(result[key])), y=result[key], label=labels[i])
     plt.xlabel("Epoch")
     plt.ylabel(key)
     plt.title(title)
     plt.legend()
+    plt.tight_layout()
 
     # Return the figure
     return fig
