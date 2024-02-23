@@ -38,7 +38,7 @@ def augment_images(folder: str, new_mean: List, new_std: List):
     os.makedirs(folder.replace("test_set", "synthetic_test_set"), exist_ok=True)
 
     # Loop through the images in the test set
-    for root, dirs, files in os.walk(folder):
+    for root, _, files in os.walk(folder):
         for file in tqdm(files, desc="Augmenting images", total=len(files)):
             if file.endswith(".jpg"):
                 img = cv2.imread(os.path.join(root, file), cv2.IMREAD_COLOR)

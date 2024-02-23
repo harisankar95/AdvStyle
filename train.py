@@ -89,7 +89,7 @@ if __name__ == "__main__":
         num_workers=NUM_WORKERS,
     )
 
-    # Create the model and optimizer (SGD with momentum and weight decay)
+    # Initialize the model and optimizer (SGD with momentum and weight decay)
     model = SimpleImageClassifier(num_classes=2).to(device)
     loss_fn = nn.CrossEntropyLoss()  # Use cross-entropy loss
     optimizer = torch.optim.SGD(model.parameters(), lr=LEARNING_RATE, weight_decay=WEIGHT_DECAY, momentum=MOMENTUM)
@@ -115,7 +115,7 @@ if __name__ == "__main__":
     gc.collect()
     torch.cuda.empty_cache()
 
-    # Create a new model and optimizer
+    # Initialize a new model and optimizer
     model = SimpleImageClassifier(num_classes=2).to(device)
     optimizer = torch.optim.SGD(model.parameters(), lr=LEARNING_RATE, weight_decay=WEIGHT_DECAY, momentum=MOMENTUM)
 

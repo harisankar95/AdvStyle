@@ -41,7 +41,7 @@ def t_sne(stylefeats: List[np.array]) -> plt.Figure:
     # Create the scatter plot
     fig = plt.figure(figsize=(8, 8))
     ax = plt.subplot(aspect="equal")
-    sc = ax.scatter(X_tsne[:, 0], X_tsne[:, 1], lw=0, s=40, c=palette[all_y.astype(np.int64)])
+    _ = ax.scatter(X_tsne[:, 0], X_tsne[:, 1], lw=0, s=40, c=palette[all_y.astype(np.int64)])
     ax.axis("tight")
 
     # Add the labels to the scatter plot
@@ -83,7 +83,7 @@ def get_means_stds(folder: str) -> Tuple[np.array, np.array]:
     stds = []
 
     # Loop through the images in the directory and get the mean and standard deviation
-    for root, dirs, files in os.walk(folder):
+    for root, _, files in os.walk(folder):
         for file in files:
             if file.endswith(".jpg"):
                 img = cv2.imread(os.path.join(root, file), cv2.IMREAD_COLOR)
@@ -105,6 +105,6 @@ if __name__ == "__main__":
     synthetic_test_means, synthetic_test_stds = get_means_stds("./data/synthetic_test_set")
 
     # Apply t-SNE for dimensionality reduction and create a scatter plot
-    fig = t_sne([test_means, synthetic_test_means])
-    fig.savefig("./assets/t_sne_plot.png")
+    figure = t_sne([test_means, synthetic_test_means])
+    figure.savefig("./assets/t_sne_plot.png")
     print("t-SNE plot saved at ./assets/t_sne_plot.png")
