@@ -119,7 +119,7 @@ The following plots show the performance of the models with and without the styl
 
 <div align="center">
     <figure style="display: inline-block; text-align: center;">
-        <img src="./assets/synthetic_test_acc.png" width="50%" alt="Accuracy" />
+        <img src="./assets/synthetic_test_acc.png" width="75%" alt="Accuracy" />
         <p>Accuracy</p>
     </figure>
 </div>
