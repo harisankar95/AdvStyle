@@ -114,3 +114,19 @@ pip install -r requirements.txt
     ```
 
 ## Results
+
+The following plots show the performance of the models with and without the style augmentation on the synthetic test set.
+
+<div align="center">
+    <figure style="display: inline-block; text-align: center;">
+        <img src="./assets/synthetic_test_acc.png" width="50%" alt="Accuracy" />
+        <p>Accuracy</p>
+    </figure>
+</div>
+
+The results show that the model with the adversarial style augmentation performs better on the synthetic test set than the model without the style augmentation thus demonstrating the effectiveness of the proposed method in improving the model's performance on unseen domains with different style features.
+
+## References
+
+1. Zhun Zhong and Yuyang Zhao and Gim Hee Lee and Nicu Sebe, "Adversarial Style Augmentation for Domain Generalized Urban-Scene Segmentation", arXiv preprint arXiv:2207.04892, 2022.
+2. "Dogs vs. Cats," Kaggle, 2022. [Online]. Available: <https://www.kaggle.com/datasets/tongpython/cat-and-dog/data>. [Accessed: 22- Feb- 2024].
